@@ -24,7 +24,7 @@
 <link rel="shortcut icon" href="/images/favicon.png">
 
 
-<title>Archives - Hexo</title>
+<title>自然语言处理一 - Hexo</title>
 
 <meta name="keywords" content>
 
@@ -112,8 +112,10 @@
 
             <div class="page-title">
     <ul>
-        <li><a href="/" data-name="Home" title="Back Home">Home</a></li>
-        <li><a href="/tags" data-name="Tag Cloud" title="Tag Cloud">Tags</a></li>
+        <li><a href="/">Recent Posts</a></li>
+        
+        
+        
         <li class="page-search">
     <form id="search" class="search-form">
         <input type="text" readonly="readonly" id="local-search-input-tip" placeholder="click to search...">
@@ -126,47 +128,119 @@
 <div class="main-inner">
     <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
         <div class="post-header">
-            <h3 class="post-title">Nice 🥳 2 posts in total. Keep on posting.</h3>
-        </div>
-        
-
-        <div class="post-content markdown-body" itemprop="articleBody">
-            <div class="archives">
-                
-                
-                
-                
-                
-                <div class="archives-item">
-                    <h2>2019年09月</h2>
-                    <ul class="archives_list">
-                        
-                        <li>07日16:32:18
-                            <a href="/2019/09/07/自然语言处理一/">自然语言处理一</a>
-                            
-                        </li>
-                        
-                
-                
-                
-                        <li>06日20:29:52
-                            <a href="/2019/09/06/hello-world/">Hello World</a>
-                            
-                        </li>
-                        
-                    </ul>
-                </div>
-                
-                
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="https://shuoit.net" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar">
+                </a>
+                <p><span class="label">Author</span>
+                    <a href="https://shuoit.net" target="_blank">纠结伦</a>
+                    <span title="Last edited at&nbsp;2019-09-07">2019-09-07</span>
+                </p>
+                <p>一个搬🧱的劳斯基😁️️</p>
+            </div>
+            <h2 class="post-title">自然语言处理一</h2>
+            <div class="post-meta">
+                emm... 1607 words in the article |
+                you are the&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>th friend who reading now
             </div>
         </div>
+        <div class="post-content markdown-body">
+            <h3 id="什么是时间复杂度？"><a href="#什么是时间复杂度？" class="headerlink" title="什么是时间复杂度？"></a>什么是时间复杂度？</h3><pre><code>用来度量算法的运行时间，记作T(n) = O(f(n))，表示随着输入大小ｎ的增大，
+算法执行需要的时间增长可以用f(n)来描述</code></pre><h3 id="时间复杂度的计算方法？"><a href="#时间复杂度的计算方法？" class="headerlink" title="时间复杂度的计算方法？"></a>时间复杂度的计算方法？</h3><pre><code>计算执行的次数？
+    ①遇到并列的相加即可
+    ②遇到if分支，哪个分支高执行哪个
+    ③循环条件，看执行变量是否有变化</code></pre><h3 id="时间复杂度参考blog"><a href="#时间复杂度参考blog" class="headerlink" title="时间复杂度参考blog"></a><a href="https://www.jianshu.com/p/f4cca5ce055a" title="参照页面" target="_blank" rel="noopener">时间复杂度参考blog</a></h3><h2 id="常用计算复杂度的两种方法"><a href="#常用计算复杂度的两种方法" class="headerlink" title="常用计算复杂度的两种方法"></a>常用计算复杂度的两种方法</h2><h3 id="主定理公式"><a href="#主定理公式" class="headerlink" title="主定理公式"></a>主定理公式</h3><h4 id="1-主定理的使用范围"><a href="#1-主定理的使用范围" class="headerlink" title="1.主定理的使用范围"></a>1.主定理的使用范围</h4><pre><code>对于规模为n的分治问题(递归)即时间可以表示为T(n)=aT(n/b)+f(n)的形式</code></pre><h4 id="2-判定方法"><a href="#2-判定方法" class="headerlink" title="2.判定方法"></a>2.判定方法</h4><pre><code>1.O(nlog_b_a) &gt; O(f(n))===============&gt;T(n)=O(nlog_b_a)
+2.O(nlog_b_a) &lt; O(f(n))===============&gt;T(n)=O(f(n))
+3.O(nlog_b_a*（log_n)^k)=O(f(n))======&gt;T(n)=O(nlog_b_a*(logn)^(k+1))</code></pre><h4 id="3-案例分析"><a href="#3-案例分析" class="headerlink" title="3.案例分析"></a>3.案例分析</h4><pre><code>例如对于A=[3,4,1,6,7,2,5,9]采用归并排序,假设时间T(n)
+1.[3,4,1,6],[7,2,5,9]  算法所用的时间为T(n)=2T(n/2)+n
+    其中n:表示对于两个数组，一共要比较n次才能够获得排序后的队列
+计算过程
+    b=2,a=2,f(n)=n    
+    n^log_b_a=n=f(n)
+    所以T(n)=O(nlogn)</code></pre><h3 id="递归数的方式"><a href="#递归数的方式" class="headerlink" title="递归数的方式"></a>递归数的方式</h3><h4 id="1-适用范围"><a href="#1-适用范围" class="headerlink" title="1.适用范围:"></a>1.适用范围:</h4><pre><code>对于递归嵌套调用，都可以画出递归树结构，然后计算复杂度</code></pre><h4 id="2-案例分析"><a href="#2-案例分析" class="headerlink" title="2.案例分析"></a>2.案例分析</h4><pre><code>计算斐波那契数列的时间复杂度
+f(n)=f(n-1) + f(n-2)
+f(n-1)=f(n-2) + f(n-3)....
+画出递归数，我们可以看到
+第0层    2^0
+第一层    2^1
+第二层    2^2
+...
+第n-2层    2^(n-2)
+总时间复杂度2^0+2^1+2^2+....+2^(n-2)，近似为O(2^n)
+
+斐波那契数列的改进方案：
+    对于上面的计算，有很多部分重复，我们可以采用DP方法O(n)
+     &apos; if(n == 0)
+ 8         return 0;
+ 9     if(n == 1)
+10         return 1;
+11     long firstItem = 0;
+12     long secondItem = 1;
+13     long fib = 0;
+14     unsigned int cnt = 1;
+15     while(cnt &lt; n)
+16     {
+17         fib = firstItem + secondItem;
+18         firstItem = secondItem;
+19         secondItem = fib;
+20         ++cnt;
+21     }
+22     return fib;&apos;
+
+
+改进方法2O(logn)
+采用矩阵的方法，(归纳法证明)
+
+
+改进方法三:公式法O(1)</code></pre><p><a href="https://blog.csdn.net/u011068702/article/details/78948145" title="参考博客" target="_blank" rel="noopener">参考博客</a></p>
+<h3 id="对于问题的划分"><a href="#对于问题的划分" class="headerlink" title="对于问题的划分"></a>对于问题的划分</h3><pre><code>P(可以解决的问题时间复杂度O(n^p))
+NP(可以解决的问题，但是用于判断这个解是不是想要的这类问题)
+NPHard(不可解决的问题O(p^n))
+    1.对于较小型的问题仍可适用
+    2.近似算法
+        1.提出近似算法
+        2.指出时间复杂度
+        3.给出近似算法最后的解离我们想要的最优解有多远
+    3.量子计算机
+NPComplete</code></pre><h3 id="对于搜索问答系统的搭建步骤"><a href="#对于搜索问答系统的搭建步骤" class="headerlink" title="对于搜索问答系统的搭建步骤"></a>对于搜索问答系统的搭建步骤</h3><pre><code>1.分词
+2.预处理
+    1.拼写纠错
+    2.五用词过滤
+    3.同义词...
+3.文本表示
+4.计算相似度
+5.排序
+6.返回结果</code></pre>
+            
+                
+
+            
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> Donate
+            </a>
+        </div>
+        
+        <div class="post-tags">Tags：
+            
+        </div>
+        
     </article>
+    
+        <p style="text-align: center">This article just represents my own viewpoint. If there is something wrong, please correct me.</p>
+    
+    
+    
+
 </div>
+<script src="/js/busuanzi.pure.mini.js"></script>
+
 
         </div><!-- end #main-->
     </div><!-- end #body -->
     <footer class="footer">
-    <div class="footer-inner" style="text-align: left">
+    <div class="footer-inner" style="text-align: center">
         <p>
             <a href="/about" title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <!-- 自定义链接 -->
