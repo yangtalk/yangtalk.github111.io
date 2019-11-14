@@ -24,7 +24,7 @@
 <link rel="shortcut icon" href="/images/favicon.png">
 
 
-<title>archives- 2019/9 - Hexo</title>
+<title>git的使用 - Hexo</title>
 
 <meta name="keywords" content>
 
@@ -112,8 +112,10 @@
 
             <div class="page-title">
     <ul>
-        <li><a href="/" data-name="Home" title="Back Home">Home</a></li>
-        <li><a href="/tags" data-name="Tag Cloud" title="Tag Cloud">Tags</a></li>
+        <li><a href="/">Recent Posts</a></li>
+        
+        
+        
         <li class="page-search">
     <form id="search" class="search-form">
         <input type="text" readonly="readonly" id="local-search-input-tip" placeholder="click to search...">
@@ -126,47 +128,72 @@
 <div class="main-inner">
     <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
         <div class="post-header">
-            <h3 class="post-title">Nice 🥳 2 posts in total. Keep on posting.</h3>
-        </div>
-        
-
-        <div class="post-content markdown-body" itemprop="articleBody">
-            <div class="archives">
-                
-                
-                
-                
-                
-                <div class="archives-item">
-                    <h2>2019年09月</h2>
-                    <ul class="archives_list">
-                        
-                        <li>07日16:32:18
-                            <a href="/2019/09/07/自然语言处理一/">自然语言处理一</a>
-                            
-                        </li>
-                        
-                
-                
-                
-                        <li>06日20:29:52
-                            <a href="/2019/09/06/hello-world/">Hello World</a>
-                            
-                        </li>
-                        
-                    </ul>
-                </div>
-                
-                
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="https://shuoit.net" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar">
+                </a>
+                <p><span class="label">Author</span>
+                    <a href="https://shuoit.net" target="_blank">纠结伦</a>
+                    <span title="Last edited at&nbsp;2019-11-14">2019-11-14</span>
+                </p>
+                <p>一个搬🧱的劳斯基😁️️</p>
+            </div>
+            <h2 class="post-title">git的使用</h2>
+            <div class="post-meta">
+                emm... 669 words in the article |
+                you are the&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>th friend who reading now
             </div>
         </div>
+        <div class="post-content markdown-body">
+            <h2 id="github本地项目的初始配置"><a href="#github本地项目的初始配置" class="headerlink" title="github本地项目的初始配置"></a>github本地项目的初始配置</h2><pre><code>cmd 切换到指定路径
+配置 git config --global user.name &apos;账户名&apos;
+配置 git config --global user.email &apos;b347996447@gmail.com&apos;    
+检查配置 git config -l</code></pre><h2 id="本地关联到github项目"><a href="#本地关联到github项目" class="headerlink" title="本地关联到github项目"></a>本地关联到github项目</h2><pre><code>1.当前目录下打  git init
+2.项目关联github git remote add origin + git@github.com:Yangzhenzhong1/blockchain.git(仓库链接)</code></pre><h2 id="如何把本地的文件推送到git端"><a href="#如何把本地的文件推送到git端" class="headerlink" title="如何把本地的文件推送到git端"></a>如何把本地的文件推送到git端</h2><pre><code>1.git status 看本地发生哪些变化
+2.如何让文件修改在本地生效
+    1.git add *
+    2.git commit -m &apos;注释&apos;
+3.推送到git端
+    1.git push -u origin master</code></pre><h2 id="如何获得别人git项目"><a href="#如何获得别人git项目" class="headerlink" title="如何获得别人git项目"></a>如何获得别人git项目</h2><pre><code>1.搜索项目
+2.fork项目</code></pre><h2 id="自己如何查看别人的修改并同意修改"><a href="#自己如何查看别人的修改并同意修改" class="headerlink" title="自己如何查看别人的修改并同意修改"></a>自己如何查看别人的修改并同意修改</h2><pre><code>fork项目到本地后
+1.修改后点 commit changes
+2.项目pull request
+3.点击new pull request
+4.点击 create pull request
+5.pull request
+6.点击修改内容查看
+7.merge pull request  confirm merge 合并</code></pre><h2 id="hexo-使用"><a href="#hexo-使用" class="headerlink" title="hexo 使用"></a>hexo 使用</h2><pre><code>hexo s 开启博客
+hexo new title 创建博客</code></pre>
+            
+                
+
+            
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> Donate
+            </a>
+        </div>
+        
+        <div class="post-tags">Tags：
+            
+        </div>
+        
     </article>
+    
+        <p style="text-align: center">This article just represents my own viewpoint. If there is something wrong, please correct me.</p>
+    
+    
+    
+
 </div>
+<script src="/js/busuanzi.pure.mini.js"></script>
+
 
         </div><!-- end #main-->
     </div><!-- end #body -->
     <footer class="footer">
-    <div class="footer-inner" style="text-align: left">
+    <div class="footer-inner" style="text-align: center">
         <p>
             <a href="/about" title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
             <!-- 自定义链接 -->
