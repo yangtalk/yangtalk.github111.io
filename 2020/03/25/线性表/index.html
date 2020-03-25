@@ -1,0 +1,698 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=https://github.com/yangtalk/yangtalk.github.io/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+<meta http-equiv="X-DNS-Prefetch-Control" content="on">
+<link rel="dns-prefetch" href="https://github.com/yangtalk/yangtalk.github.io">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="prefetch" href="https://github.com/yangtalk/yangtalk.github.io">
+<link rel="prefetch" href="//www.google-analytics.com">
+
+
+<link rel="prerender" href="https://github.com/yangtalk/yangtalk.github.io">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=https://github.com/yangtalk/yangtalk.github.io">
+<meta name="author" content="yangtalk">
+<link rel="stylesheet" href="/css/JSimple.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>线性表 - Hexo</title>
+
+<meta name="keywords" content>
+
+<meta name="description " content>
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        });
+    </script>
+
+
+    
+
+    
+
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="工科渣狗">工科渣狗</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span>Tags</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">工科渣狗</h1>
+        <h3 class="cover-siteTitle">用代码摇滚这个世界</h3>
+        <p class="cover-siteDesc">一个关注技术与人文的IT博客</p>
+        <div class="cover-sns">
+            
+    &nbsp;&nbsp;<div class="btn btn-telegram">
+        <a href="http://t.me/kunyintang" target="_blank" title="telegram" ref="friend">
+            <i class="fa fa-telegram"></i>
+        </a>
+    </div>
+
+    &nbsp;&nbsp;<div class="btn btn-instagram">
+        <a href="https://www.instagram.com/mtangsir/" target="_blank" title="instagram" ref="friend">
+            <i class="fa fa-instagram"></i>
+        </a>
+    </div>
+
+    &nbsp;&nbsp;<div class="btn btn-twitter">
+        <a href="https://twitter.com/tangkunyin" target="_blank" title="twitter" ref="friend">
+            <i class="fa fa-twitter"></i>
+        </a>
+    </div>
+
+    &nbsp;&nbsp;<div class="btn btn-github">
+        <a href="https://github.com/tangkunyin" target="_blank" title="github" ref="friend">
+            <i class="fa fa-github"></i>
+        </a>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+            <div class="page-title">
+    <ul>
+        <li><a href="/">Recent Posts</a></li>
+        
+        
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <input type="text" readonly="readonly" id="local-search-input-tip" placeholder="click to search...">
+        <button type="button" disabled="disabled" class="search-form-submit"><i class="fa fa-search"></i></button>
+    </form>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="https://shuoit.net" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar">
+                </a>
+                <p><span class="label">Author</span>
+                    <a href="https://shuoit.net" target="_blank">纠结伦</a>
+                    <span title="Last edited at&nbsp;2020-03-25">2020-03-25</span>
+                </p>
+                <p>一个搬🧱的劳斯基😁️️</p>
+            </div>
+            <h2 class="post-title">线性表</h2>
+            <div class="post-meta">
+                emm... 11973 words in the article |
+                you are the&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>th friend who reading now
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><pre><code>1.相同特性(方便批处理)
+2.有限(个数有限)
+3.序列(体现一对一的逻辑性)  
+    一对一:每个元素有一个前驱和后继</code></pre><h2 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h2><pre><code>1.顺序存储
+    1.数组实现
+2.链式存储
+    1.链表实现</code></pre><h2 id="链表种类"><a href="#链表种类" class="headerlink" title="链表种类"></a>链表种类</h2><pre><code>1.单链表
+    1.带头节点
+        1.元素
+            1.头节点
+            2.开始结点(第一个存数据)
+        3.判空条件:Head-&gt;next == NULL
+    2.不带头节点
+        1.判空条件 Head == NULL
+2.双链表
+3.单循环链表
+    1.带头节点
+        1.判空条件:Head-&gt;next == Head
+    2.不带头节点
+        1.判空条件:Head == NULL
+4.双循环链表
+    1.带头节点
+        1.判空条件:Head-&gt;prior = Head or Head-&gt;next = Head
+    2.不带头节点
+        1.判空条件:Head == NULL</code></pre><h2 id="考点"><a href="#考点" class="headerlink" title="考点"></a>考点</h2><pre><code>1.特性对比问题
+2.插入删除
+3.建表
+4.划分
+5.归并
+6.逆置
+7.取最值
+8.移动次数计算和静态链表</code></pre><h2 id="不同存储结构特性对比"><a href="#不同存储结构特性对比" class="headerlink" title="不同存储结构特性对比"></a>不同存储结构特性对比</h2><pre><code>1.插入删除
+    1.顺序表插入删除操作可能【尾部插入除外】会导致大量元素移动
+    2.链表插入删除不会导致大量移动
+2.存取
+    1.顺序表:随机存取
+    2.单链表:从头到尾查找(不支持随机存取)
+        1.双链表循环链表可以从给定结点开始查找，仍然不支持随机存取
+        2.为经常定位的位置设定指针:如尾指针
+3.存储空间
+    1.从整体来看，链表【一般】比顺序表节省空间
+    2.但是顺序表在满存的时候，利用率不一定比链表低
+    3.单个存储单元
+        1.顺序表无额外开销
+        2.链表有额外指针开销
+        3.顺序表单个存储空间利用率比链表高</code></pre><h2 id="移动次数计算和静态链表"><a href="#移动次数计算和静态链表" class="headerlink" title="移动次数计算和静态链表"></a>移动次数计算和静态链表</h2><pre><code>1.插入操作移动次数的计算题型
+    1.某个位置插入元素所需要的移动次数
+    2.在每个位置上插入元素所需的评价移动次数
+        1.每个位置概率(大多数概率相同)
+        2.每个位置所需移动次数
+        3.Σ(概率*次数)
+    3.在位置i(0~n)位置插入，需要移动n-i个元素
+    4.平均移动n/2
+2.删除操作移动次数计算
+    1.长度为n的可删除个数为n
+    2.每个概率评价为1/n
+    3.在i(0~n-1)位置,移动n-i-1
+    4.平均移动(n-1)/2
+
+3.静态链表
+    1.一次性分配完所需空间
+    2.结构体类型
+        typedef struct{
+            int data;
+            int next;// 存储下一个链表的&quot;地址&quot;[数组下标]
+        }SLNode;
+        SLNode SLink[maxSize];
+    3.基本操作
+        int p = Ad0 // 定义一个指针
+        SLink[p].data // 取指针p指向的结点值
+        SLink[p].next // 取p后继点指针
+        【在p后插入结点q】
+        SLink[q].next = SLink[p].next;
+        SLink[p].next = q;</code></pre><h2 id="插入与删除"><a href="#插入与删除" class="headerlink" title="插入与删除"></a>插入与删除</h2><pre><code>1.链表插入与删除
+    1.单链表
+        1.插入
+            s-&gt;next = p-&gt;next;
+            p-&gt;next = s;
+        2.删除
+            p-&gt;next = s-&gt;next;
+            free(s)
+        3.特殊位置插入删除
+            1.含有头节点插入
+                s-next = head-&gt;next
+                head-&gt;next = s;
+            2.不含头节点插入
+                s-&gt;next = head-&gt;next;
+                head = s;  
+            3.含有头节点删除
+                head-&gt;next = s-&gt;next;
+                free(s);
+            4.不含头节点
+                head = head-&gt;next;
+                free(p);
+        4.总结
+            头节点:使得在第一个结点前后插入删除数据操作统一
+    2.双链表
+        1.插入
+            s-&gt;next = p-&gt;next;
+            p-&gt;next = s;
+            s-&gt;prior = p;
+            s-&gt;next-&gt;prior = s;
+        2.删除
+            s-&gt;prior-&gt;next = s-&gt;next;
+            s-&gt;next-&gt;prior = s-&gt;prior;
+            free(s);
+    3.顺序表
+        1.插入
+            1.可插入位置:0-length
+            2.length == maxSize不可插入
+            3.元素从后往前进行int sqList[maxSize] = {1, 2, 3,..n};
+            int length = n;
+            int insert(int sqList[],int &amp;length, int p,int e){
+                if(p&lt;0 || p&gt;length || lenght == maxSize)
+                    return 0;
+                for(int i = length;i&gt;p;i--)
+                    sqList[i] = sqList[i-1];
+                sqList[p] = e;
+                lenght ++;
+                return 1;
+            }
+        2.删除
+            1.可删除范围0-length-1;
+            2.length=0,不可删除
+            3.元素从前往后进行
+            int remove(int sqList[], int &amp;length, int p, int &amp;e){
+                if(p&lt;0 || p&gt;length-1 || length == 0)
+                return 0;
+                e = sqList[p];
+                for(int i = p;i&lt;length-1;i++)
+                    sqList[i] = sqList[i+1];
+                length--;
+                return 1; 
+            }</code></pre><h2 id="建表"><a href="#建表" class="headerlink" title="建表"></a>建表</h2><pre><code>1.顺序表建表
+    int A[maxSize];
+    int length;
+    int creat(int A[],int &amp;length){
+        std:cin&gt;&gt;length;
+        if(length &gt; maxSize)
+            return 0;
+        for(int i=0;i&lt;length;i++)
+            std::cin&gt;&gt;A[i];
+    }
+2.链表建表算法
+    1.尾插法【单链表】链表顺序与输入顺序一致
+        void createLinkListR(LNode *&amp;head){
+            head = (LNode*)malloc(sizeof(LNode);
+            head-&gt;next = NULL;
+            // 尾插法，在尾部进行操作，需要又要给指针维护尾部结点
+            // p指针指向插入结点，r指向尾部结点
+            LNode *p = NULL,*r = head;
+            int n = 0;
+            std::cin&gt;&gt;n; // scanf(&quot;%d&quot;, &amp;n);
+            for(int i = 0;i&lt;n;i++){
+                p = (LNode*)malloc(sizeof(LNode);
+                p-&gt;next = NULL;
+                std::cin&gt;&gt;p-&lt;data;
+                p-&gt;next = r-&gt;next;// 可不要
+                r-&gt;next = p;
+                r = p;
+            }
+        }
+    2.头插法：链表顺序与输入数据相反
+        void createLinkLiskH(LNode *&amp;head){
+            head = (LNode *)malloc(sizeof(LNode);
+            head-&gt;next = NULL;
+            LNode *p = NULL;
+            int n;
+            std::cin&gt;&gt;n;
+            for(int i = 0;i&lt;n;i++){
+                P = (LNode *)malloc(sizeof(LNode));
+                p-&gt;next = NULL;
+                std::cin&gt;&gt;p-&gt;data;
+                p-&gt;next = head-&gt;next;
+                head-&gt;next = p;
+            }
+        }
+    3.真题:键盘输入n个英文字母，输入格式为n、C1、....Cn,其中n表示字母的个数，
+    请编程输入数据建立一个单链表，要求字母不重复存入链表
+        1.先遍历链表,遍历到尾部，如果没出现在尾部插入
+        void create(LNode &amp;*head){
+            int n;
+            std::cin&gt;&gt;n;
+            head = (LNode *)malloc(sizeof(LNode);
+            LNode *p = NULL;
+            head-&gt;next = NULL;
+            for(int i = 0;i&lt;n;i++){
+                char c;
+                std::cin&gt;&gt;c
+                p = head-&gt;next;
+                while(p!= NULL){
+                    if(p-&gt;data == c)
+                        break;
+                    p = p-&gt;next;
+                }
+                if(p == NULL){
+                    p = (LNode*)malloc(sizeof(LNode));
+                    p-&gt;data = ch;
+                    p-&gt;next = head-&gt;next;
+                    head-&gt;next = p;
+                }
+            }
+
+        }</code></pre><h2 id="逆置"><a href="#逆置" class="headerlink" title="逆置"></a>逆置</h2><pre><code>1.顺序表
+    // 奇数偶数代码实际上一样
+    for(int i =left, j = right;i&lt;j;i++,j--){
+        temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+2.链表
+    // 逆置p-&gt;next 到q之间的结点
+    while(p-&gt;next != q){
+        t = p-&gt;next;
+        p-&gt;next = t-&gt;next;
+        t-&gt;next = q-&gt;next;
+        q-&gt;next = t;
+    }
+3.真题:将一长度为n的数组的前端k(k&lt;n)个元素逆序后移动到数组后端，要求数组中数据不丢失
+    void reverse(int a[],int left,int right,int k){
+        int temp;
+        for(int i = left,j = right,i&lt;left + k &amp;&amp; i &lt; j; ++i,j--){
+            temp = a[i];
+            a[i] = a[j];
+            a[j] = temp;
+        }
+    }
+真题:将一长度为n的数组的前端k(k&lt;n)个元素保持原序后移动到数组后端，要求数组中数据不丢失
+    // 现在把前K个元素逆序，然后与后面逆序
+    void moveToEnd(int a[],int n,int k){
+        reverse(a,0,k-1,k);
+        reverse(a,0,n-1,k);
+    }
+真题:将数组中(X0,X1,...Xn-1),经过移动后变为(Xp,Xp+1,...Xn-1,X0,X1....Xp-1)，即循环左移p个位置
+    //原数组 0-p-1的元素保持原序移到数组后
+    void moveP(int a[],int n,int p){
+        reverse(a,0,p-1,p);
+        reverse(a,p,n-1,n-p);
+        reverse(a,0,n-1,n);
+    }</code></pre><h2 id="取最值"><a href="#取最值" class="headerlink" title="取最值"></a>取最值</h2><pre><code>1.顺序表
+    // 最大值
+    int max = a[0];
+    int maxId = 0;
+    for(int i = 0;i &lt; n; i++){
+        if(max &lt; a[i]){
+            max = a[i];
+            maxId = i;
+        }
+    }
+
+    // 找最小值
+    int min = a[0];
+    int minId = 0;
+    for(int i = 0;i &lt; n; i++){
+        if(min &gt; a[i]){
+            min = a[i];
+            minId = i;
+        }
+    }
+
+2.链表
+    // 取最大值
+    LNode *p, * q;
+    int max = head-&gt;next-&gt;data;
+    q = p = head-&gt;next;
+    while(p != NULL){
+        if(max &lt; p-&gt;data){
+            max = p-&gt;data;
+            q = p;
+        }
+        p = p-&gt;next;
+    }
+
+    // 找最小值
+    LNode *p, * q;
+    int min = head-&gt;next-&gt;data;
+    q = p = head-&gt;next;
+    while(p != NULL){
+        if(min &lt; p-&gt;data){
+            min = p-&gt;data;
+            q = p;
+        }
+        p = p-&gt;next;
+    }
+3.真题:一双链表非空，由head指针指出，结点结构为{llink,data,rlink}。请设计一个将结点数据与data值最大的哪个节点(最大值结点只有一个)移动到链表最前边的算法，要求不得申请新空间
+    void maxFirst(LNode *head){
+        // 找出最大值结点
+        LNode *p,*q;
+        p=q = head-&gt;rlink;
+        while(p!=NULL){
+            if(p-&gt;rlink-&gt;data &gt; p-&gt;data){
+                q = p-&gt;rlink;
+            }
+            p = p-&gt;rlink;
+        }
+        // “删除”结点
+        LNode *l = q-&gt;llink,*r = q-&gt;rlink;
+        l-&gt;link = r;
+        if(r != NULL)
+            r-&gt;llink = l;
+        // 插入
+        q-&gt;rlink = head-&gt;rlink;
+        q-&gt;llink = head;
+        head-&gt;rlink = q;
+        q-&gt;rlink-&gt;llink = q;
+    }</code></pre><h2 id="归并"><a href="#归并" class="headerlink" title="归并"></a>归并</h2><pre><code>1.顺序表
+    // 挑出最小元素，插入列表,直至一表结束，全部插入
+    void mergeArray(int a[],int m,int b[],int n,int c[]){
+        int i = 0,j = 0;
+        int k = 0;
+        while(i &lt; m &amp;&amp; j &lt; n){
+            if(a[i] &lt; b[j)
+                c[k++] = a[i++];
+            else
+                c[k++] = b[j++];
+        }
+        while(i &lt; m){
+            c[k++] = a[i++];
+        }
+        while(j &lt; n){
+            c[k++] = b[j++];
+        }
+    }
+2.链表
+    void merge(LNode *A,LNode *B,LNode *&amp;C){
+        LNode *p  = A-&gt;next;
+        LNode *q = B-&gt;next;
+        LNode *r;
+
+        C = A;
+        C-&gt;next = NULL;
+        free(B);
+        r = C;
+
+        while(p!=NULL &amp;&amp; q!=NULL){
+            if(p-&gt;data &lt;= q-&gt;data){
+                r-&gt;next = p;
+                p = p-&gt;next;
+                r = r-&gt;next;
+            }
+            else{
+                r-&gt;next = q;
+                q = q-&gt;next;
+                r = r&gt;next;
+            }
+        }
+        if(q!=NULL)
+            r-&gt;next = q;
+        if(p!=NULL)
+            r-&gt;next = p;
+    }
+
+
+    // 归并后逆序
+    void merge(LNode *A,LNode *B,LNode *&amp;C){
+        LNode *p  = A-&gt;next;
+        LNode *q = B-&gt;next;
+        LNode *s;
+
+        C = A;
+        C-&gt;next = NULL;
+        free(B);
+
+        while(p!=NULL &amp;&amp; q!=NULL){
+            if(p-&gt;data &lt;= q-&gt;data){
+                s = p;
+                p = p-&gt;next;
+                s-&gt;next = C-&gt;next;
+                C-&gt;next = s;
+            }
+            else{
+                s = q;
+                q = q-&gt;next;
+                s-&gt;next = C-&gt;next;
+                C-&gt;next = s;
+            }
+        }
+        while(p!=NULL){
+            s = p;
+            p = p-&gt;next;
+            s-&gt;next = C-&gt;next;
+            C-&gt;next =s;
+        }
+        while(q!=NULL){
+            s = q;
+            q = q-&gt;next;
+            s-&gt;next = C-&gt;next;
+            C-&gt;next = s;
+        }
+    }</code></pre><h2 id="划分"><a href="#划分" class="headerlink" title="划分"></a>划分</h2><pre><code>1.以某个元素为基准。划分为左右两部分
+2.以第一个元素为轴,左边都&lt;轴，右边都&gt;轴
+    void partition(int a[], int n){
+        int temp = a[0];
+        int i = 0,j = n-1;
+        whilie(i &lt; j){
+            // 从后往前找到比轴小的部分
+            // 每次移动，都需要保证i&lt;j
+            while(i&lt;j &amp;&amp; arr[j] &gt;=temp)
+                j--;
+            // 搬运元素，
+            if(i &lt; j){
+                arr[i] = arr[j];
+                i++;
+            }
+            while(i&lt;j &amp;&amp; arr[i] &lt;= temp)
+                i++;
+            if(i &lt; j){
+                arr[j] = arr[i];
+                j--;
+            }
+        }
+    }
+
+3.额外找个比较的标准
+    void partition(int a[], int n,int comp){
+        int temp = a[0];
+        int i = 0,j = n-1;
+        whilie(i &lt; j){
+            // 从后往前找到比轴小的部分
+            // 每次移动，都需要保证i&lt;j
+            while(i&lt;j &amp;&amp; arr[j] &gt;=comp)
+                j--;
+            // 搬运元素，
+            if(i &lt; j){
+                arr[i] = arr[j];
+                i++;
+            }
+            while(i&lt;j &amp;&amp; arr[i] &lt;= comp)
+                i++;
+            if(i &lt; j){
+                arr[j] = arr[i];
+                j--;
+            }
+        }
+    }
+
+3.以数组中的任意位置为数轴划分
+    void partition(int a[], int n，int k){
+        int temp = a[0];
+        int i = 0,j = n-1;
+        arr[0] = arr[k];
+        arr[k] = temp
+        whilie(i &lt; j){
+            // 从后往前找到比轴小的部分
+            // 每次移动，都需要保证i&lt;j
+            while(i&lt;j &amp;&amp; arr[j] &gt;=temp)
+                j--;
+            // 搬运元素，
+            if(i &lt; j){
+                arr[i] = arr[j];
+                i++;
+            }
+            while(i&lt;j &amp;&amp; arr[i] &lt;= temp)
+                i++;
+            if(i &lt; j){
+                arr[j] = arr[i];
+                j--;
+            }
+        }
+    }   </code></pre>
+            
+                
+
+            
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> Donate
+            </a>
+        </div>
+        
+        <div class="post-tags">Tags：
+            
+        </div>
+        
+    </article>
+    
+        <p style="text-align: center">This article just represents my own viewpoint. If there is something wrong, please correct me.</p>
+    
+    
+    
+
+</div>
+<script src="/js/busuanzi.pure.mini.js"></script>
+
+
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner" style="text-align: center">
+        <p>
+            <a href="/about" title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="Help">Help</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/links" title="Links">Links</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/sitemap.xml" title="SiteMap">SiteMap</a>
+        </p>
+        <p>
+            Has been established&nbsp<a href="/timeline" id="siteBuildingTime"></a>&nbspDays，<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="licence">Based on Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a><br>
+            ©2017-<span id="cpYear"></span> Based on&nbsp<a href="http://hexo.io" target="_blank" rel="nofollow">Hexo</a>
+            ，Theme by&nbsp&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank" rel="bookmark">JSimple</a>
+            ，Author&nbsp<a href="https://shuoit.net" target="_blank" rel="friend">纠结伦</a>
+            ，Hosted by <a href="https://pages.github.com/" target="_blank" rel="nofollow">GitHub Pages</a>
+        </p>
+    </div>
+</footer>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<!-- search pop -->
+<div class="popup search-popup local-search-popup">
+    <div class="local-search-header clearfix">
+        <span class="search-icon">
+            <i class="fa fa-search"></i>
+        </span>
+        <span class="popup-btn-close">
+            <i class="fa fa-times-circle"></i>
+        </span>
+        <div class="local-search-input-wrapper">
+            <input id="local-search-input" spellcheck="false" type="text" autocomplete="off" placeholder="Input query keywords here...">
+        </div>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        var jsi_config = {
+            buildingTime: '01/20/2018',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+            localSearch: { dbPath: '' },
+            readMode: 'day'
+        };
+        
+            jsi_config.localSearch = {
+                dbPath: '/search.json',
+                trigger: 'auto',
+                topN: '1',
+                unescape: 'false'
+            }
+        
+        SimpleCore.init(jsi_config);
+        
+    });
+</script>
+</body>
+</html>
